@@ -1,37 +1,35 @@
-function partition(arr, l, r) {
-    let pivot = arr[r];
+function partition(a, l, r) {
+    let pivot = a[r]
 
     let i = l - 1;
 
     for (let j = l; j <= r - 1; j++) {
-        if (arr[j] < pivot) {
+        if (a[j] < pivot) {
             i++;
-            //Swap arr[i] and arr[j]
-            let temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            let mj = a[j]
+            a[j] = a[i]
+            a[i] = mj;
         }
     }
 
-    //Swap (i + 1) with r
-    let temp = arr[i + 1];
-    arr[i + 1] = arr[r]
-    arr[r] = temp;
+    let virus = a[i + 1]
+    a[i + 1] = a[r]
+    a[r] = virus;
 
-    return (i + 1);
+    return i + 1;
 }
 
-
-function quickSort(arr, l, r) {
+function name1(a, l, r) {
     if (l < r) {
-        let partitionIndex = partition(arr, l, r);
-        quickSort(arr, l, partitionIndex - 1);
-        quickSort(arr, partitionIndex + 1, r)
+        let pi = partition(a, l, r)
+        name1(a, l, pi - 1)
+        name1(a, pi + 1, r)
+        return a;
     }
-    return arr;
-
 }
 
 
-let arr = [4, 2, 7, 9, 6, 3, 5]
-console.log(quickSort(arr, 0, arr.length - 1))
+
+
+let a = [5, 1, 3, 7, 8, 9, 10, 2, 4]
+console.log(name1(a, 0, a.length - 1))
