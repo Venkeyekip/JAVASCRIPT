@@ -1,33 +1,64 @@
+function mergeSort(arr, l, r) {
+  if (l >= r) {
+    return;
+  }
 
-let arr = [10, 6, 7, 5, 4]
-find(arr, 6,5 )
+  let m = l + parseInt((r - l) / 2)
 
-function find(arr, no, length) {
-
-    for(let i = 0; i < length; i++) {
-        let test = false, test1 = false;
-
-        for(let j = 0; j < length; j++) {
-            if(no - i === arr[j] ) {
-                test1 = true;
-                break;
-            }
-        }
-
-
-        for(let j = 0; j < length; j++) {
-            if(no + i === arr[j] ) {
-                test = true;
-                break;
-            }
-        }
-
-        if(test != true) {
-            return console.log(no + i);
-        }
-
-        if(test1 != true) {
-            return console.log(no - i)
-        }
-    }
+  mergeSort(arr, l, m);
+  mergeSort(arr, m + 1, r);
+  mergeSortedArrays(arr, l, m, r)
 }
+
+
+function mergeSortedArrays(arr, l, m, r) {
+  //First sorted array -> l to m
+  //Second sorted array -> m + 1 to r
+
+  let firstArrayLength = (m - l) + 1
+  let secondArrayLength = r - m
+
+  let leftPart = new Array(firstArrayLength);
+  let rightPart = new Array(secondArrayLength);
+
+  for (let i = 0; i < firstArrayLength; i++) {
+    leftPart[i] = arr[l + i];
+  }
+
+  for (let j = 0; j < secondArrayLength; j++) {
+    rightPart[j] = arr[m + 1 + j]
+  }
+
+
+  let i = 0, j = 0, k = l;
+
+  while (i < firstArrayLength && j < secondArrayLength) {
+    if (leftPart[i] <= rightPart[j]) {
+      arr[k] = leftPart[i];
+      i++;
+    } else {
+      arr[k] = rightPart[j];
+      j++;
+    }
+    k++;
+  }
+
+  while (i < firstArrayLength) {
+    arr[k] = leftPart[i];
+    i++;
+    k++;
+  }
+
+  while (j < secondArrayLength) {
+    arr[k] = rightPart[j];
+    j++;
+    k++;
+  }
+}
+
+
+
+
+let arr = [5, 3, 2, 99, 0, 4]
+mergeSort(arr, 0, arr.length - 1)
+console.log(arr)
