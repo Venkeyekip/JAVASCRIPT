@@ -1,43 +1,62 @@
-function Add(){
-    var num1 = parseInt(prompt())
-    var num2 = parseInt(prompt())
-    var result = (num1 + num2);
-    return document.getElementById("re1").innerHTML = result;
+// function myfunction(a){
 
-}
-function Substract(){
-    var num1 = parseInt(prompt())
-    var num2 = parseInt(prompt())
-    var result = (num1 - num2);
-    return document.getElementById("re2").innerHTML = result;
-    
-
-}
-function Multiply(){
-    var num1 = parseInt(prompt())
-    var num2 = parseInt(prompt())
-    var result = (num1 * num2);
-    return document.getElementById("re3").innerHTML = result;
+//     // if(a > 0)
+//     //     var c = parseFloat(a)
+//     return parseInt(a);
+// }
 
 
+// // console.log(myfunction(10));
+
+// var a = 30;
+
+// if(a == parseInt){
+//     console.log(true)
+// }else{
+//     console.log(false);
+// }
+
+
+
+
+
+// function newFucntion(a){
+//     c = Math.round(a, 2);
+
+//     return c;
+// }
+
+// var d = newFucntion(1043.4534);
+
+// console.log(d);
+
+
+
+
+
+
+var num = 10;
+var a = true;
+for(let i = 2; i <= num; i++){
+    if(num % i === 0){
+        a = false;
+        break;
+    }
+
+}
+console.log(a);
+while(a != true){
+    num++
+    for(let i = 0; i <= num; i++){
+        if(num % i === 0){
+            a = false;
+            break;
+        } else {
+            a = true;
+        }
+    }
+    i = 0;
+    console.log(a)
 }
 
-function Divide(){
-    var num1 = parseInt(prompt())
-    var num2 = parseInt(prompt())
-    var result = (num1 / num2);
-    return document.getElementById("re4").innerHTML = result;
-}
-function Sqrt(){
-    var num1 = parseInt(prompt())
-    var num2 = 0.5
-    var result = Math.sqrt(num1, num2);
-    return document.getElementById("re5").innerHTML = result;
-}
-function power(){
-    var num1 = parseInt(prompt())
-    var num2 = parseInt(prompt())
-    var result = Math.pow(num1, num2);
-    return document.getElementById("re6").innerHTML = result;
-}
-
+console.log(num);
