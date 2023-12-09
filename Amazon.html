@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title title="Amazon shopping"></title>
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+
+        header{
+            background: #3498db;
+            padding: 25px; 
+            color:#fff;
+            text-align: center;
+            
+             }
+             menu{
+                display: flex;
+                justify-content: space-around;
+            
+                
+             }
+             menu:hover{
+                background: #f6b93b;
+                transition: all .7s ease-in -out;
+            
+             }
+             figure:hover{
+                transform: scale(1.2);
+                transition: all .7s ease-in-out;
+              }
+              figure img{
+                color: aqua;
+              }
+
+            
+             
+             main{
+                width: 60%; 
+                height: auto;
+                margin:auto;
+                border: 1px solid black;
+                box-shadow: 0px 0px 10px rgba(0,0,0,.7);
+                padding: 13px;
+             }
+             footer{
+                display: flex;
+                justify-content: center;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 40px;
+                background: #3498db;
+                color:white;
+                line-height: 35px;
+                text-align: center;
+                font-weight: bold;
+             }
+    
+
+
+    </style>
+    <script>
+        function cartaddsuccess{
+         
+            
+        }
+    </script>
+</head>
+<body>
+    <header title="Amazon">
+        Amazon Shopping
+    </header>
+  <section>
+    <nav>
+        <menu>
+            <a href="/home">Home</a><br/>
+            <a href="/products">Products</a><br/>
+            <a href="/aboutus">About Us</a><br/>
+            <a href="/contactus">Contact Us</a><br/>
+        </menu>
+    </nav>
+    <main>
+        <figure>
+            <img src="./watch.jpg" width="100px" height="100px"> 
+        </figure>
+        <h3>Product Name:</h3>
+        <figcaption><q><b>Apple Watch Series 7, Apple Watch SE, and Apple Watch Series 3 have a water resistance rating of 50 meters under ISO standard 22810:2010. This means that they may be used for shallow-water activities like swimming in a pool or ocean. However, they should not be used for scuba diving, waterskiing, or other activities involving high-velocity water or submersion below shallow depth. Series 7 is also rated IP6X dust resistan</b></q></figcaption><br>
+        <div class="price">Price:$99.99</div>
+        <form action="" method="post">
+        </form><br>
+             <dialog open="">
+             <p style="color:red;">Please Login to Continue Your Shopping!</p>
+             </dialog>
+        <details>
+            <summary>Description</summary>
+            <p>This is a great product for any man or woman who loves to watch the world go by.</p>
+            </details>
+            <p>Quantity:</p>
+            <input type="number" name="quantity" min="1" max="10"><br>
+        </details>
+        <button onclick="cartaddsuccess" class="bi bi-cart bg-primary">Add To Cart</button>
+
+        </main>
+        </section>
+       
+        </dialog>
+        <footer>
+            &copy; 2023 Amazon Shopping
+        </footer>
+</body>
+</html>
