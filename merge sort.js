@@ -1,26 +1,27 @@
 function mergeSortedArrays(arr, l, m, r) {
+    //First sorted array -> l to m
+    //Second sorted array -> m + 1 to r
 
-    let firstArrayLength = (m - l) + 1;
-    let secondArrayLength = r - m;
-
+    let firstArrayLength = (m - l) + 1
+    let secondArrayLength = r - m
 
     let leftPart = new Array(firstArrayLength);
     let rightPart = new Array(secondArrayLength);
 
-    for(let i = 0; i < firstArrayLength; i++) {
+    for (let i = 0; i < firstArrayLength; i++) {
         leftPart[i] = arr[l + i];
     }
 
-    for(let j = 0; j < secondArrayLength; j++) {
-        rightPart[j] = arr[m + j + 1];
+    for (let j = 0; j < secondArrayLength; j++) {
+        rightPart[j] = arr[m + 1 + j]
     }
 
     let i = 0, j = 0, k = l;
 
-    while(i < firstArrayLength && j < secondArrayLength) {
-        if(leftPart[i] < rightPart[j]) {
+    while (i < firstArrayLength && j < secondArrayLength) {
+        if (leftPart[i] <= rightPart[j]) {
             arr[k] = leftPart[i];
-            i++
+            i++;
         } else {
             arr[k] = rightPart[j];
             j++;
@@ -28,33 +29,30 @@ function mergeSortedArrays(arr, l, m, r) {
         k++;
     }
 
-    while(i < firstArrayLength) {
+    while (i < firstArrayLength) {
         arr[k] = leftPart[i];
-        i++, k++;
+        i++;
+        k++;
     }
 
-    while(j < secondArrayLength) {
+    while (j < secondArrayLength) {
         arr[k] = rightPart[j];
-        j++, k++;
+        j++;
+        k++;
     }
 }
 
 
-
-
-
 function mergeSort(arr, l, r) {
-
-    if(l >= r) {
+    if (l >= r) {
         return;
     }
 
-    let m = l + parseInt((r - l) / 2);
+    let m = l + parseInt((r - l) / 2)
 
     mergeSort(arr, l, m);
     mergeSort(arr, m + 1, r);
-    mergeSortedArrays(arr, l, m, r);
-
+    mergeSortedArrays(arr, l, m, r)
 }
 
 let arr = [5, 3, 2, 99, 0, 4]
