@@ -1,19 +1,18 @@
-let n = parseInt(readline());
-	while(n--)
-   {
-      let arr = [];
-	arr = readline().split(" ");
-	var a = arr[0];
-	var b = arr[1];
-	var c = arr[2];
-      var l;
-// write your code here
-    arr = "45 23 54"
-	if((a > b && a < c) ||(a < b && a > c)){
-    	console.log(a);
-	}else if((b > a && b < c) || (b < a && b > c)){
-    	console.log(b)
-	}else{
-    	console.log(c);
-	}
-}
+// var x = (3, 4, 1, 8);
+// console.log(x);
+// var x = 4;
+// var y = 3;
+
+// console.log('The addition of 5 + 3 is : $[x + y}');
+
+
+// let num = 5;
+// console.log(num++);
+// console.log(num);
+// console.log(++num);
+
+// let newNum = 45;
+// newNum = newNum++;
+// const newNum2 = ++newNum 
+
+// console.log(newNum2);
