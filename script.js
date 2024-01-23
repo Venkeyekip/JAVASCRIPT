@@ -1,11 +1,16 @@
-function myFunction(a, b) {
+function myFunction(a, n) {
    
-    return a === b;
+    return a[n - 1];
  }
 
 
 
-// myFunction(2, 3)              //  Expected                 false 
-// myFunction(3, 3)                Expected                 true 
-// myFunction(1, '1')              Expected                 false 
-// myFunction('10', '10')          Expected                 true 
+// myFunction('abcd',1)
+// // Expected
+// // 'a'
+// myFunction('zyxbwpl',5)
+// // Expected
+// // 'w'
+// myFunction('gfedcba',3)
+// // Expected
+// // 'e'
