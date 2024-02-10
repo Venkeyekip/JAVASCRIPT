@@ -1,35 +1,38 @@
-// let n = -20;
-// for (let i = 0; i <= n; i++) {
-//     let prime = 0;
-//     for (let j = 2; j < i; j++) {
-//         if (i % j === 0) {
-//             prime = 1;
-//             break;
-//         }
-//     }
-//     if (i > 1 && prime == 0) {
-//         console.log(i)
-//     }
-// }
-
-function primeis(num) {
-    if(num <= 1) {
-        return -1;
+function isPrime(num) {
+    if (num < 2) {
+        return false;
     }
 
-    for(let i = 2; i < num; i++) {
-        let a = true;
-        for(let j = 2; j <= i; j++ ) {
-            if(i % j === 0) {
-                a = false;
-                break;
-            }
-        }
-        if(a === true){
-            console.log(i)
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
         }
     }
-
+    return true;
 }
 
-primeis(20)
+
+function primeNumbersInRange(range) {
+    let primeNumber = new Array();
+    for (let i = 2; i <= range; i++) {
+        if (isPrime(i) == true) {
+            primeNumber.push(i);
+        }
+
+    }
+
+    return primeNumber;
+}
+
+
+
+
+var readline = require('readline');
+var rl = readline.createInterface(
+    process.stdin, process.stdout);
+
+rl.question('Enter your number here ', (num) => {
+    console.log(primeNumbersInRange(parseInt(num)));
+    rl.close();
+});
+
