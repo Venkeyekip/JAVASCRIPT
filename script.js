@@ -1,101 +1,62 @@
-// var num = 50;
-// var prime = "yes"
-// for(let i = 2; i < 50; i++){
+// function myfunction(a){
 
-//     for(let j = 2; j < i; j++){
-//         if(i / j == 0){
-//             prime  = i;
-//             break;
-//         }
-//     }
-//     console.log(i);
-
+//     // if(a > 0)
+//     //     var c = parseFloat(a)
+//     return parseInt(a);
 // }
 
-// program to print prime numbers between the two numbers
 
+// // console.log(myfunction(10));
 
+// var a = 30;
 
-
-
-// for (let i = 1; i <= 50; i++) {
-//     let prime = 0;
-
-//     // looping through 2 to user input number
-//     for (let j = 2; j < i; j++) {
-//         if (i % j == 0) {
-//             prime = 1;
-//             break;
-//         }
-//     }
-
-//     // if number greater than 1 and not divisible by other numbers
-//     if (i > 1 && prime == 0) {
-//         console.log(i);
-//     }
+// if(a == parseInt){
+//     console.log(true)
+// }else{
+//     console.log(false);
 // }
 
 
 
 
 
+// function newFucntion(a){
+//     c = Math.round(a, 2);
 
-
-// var num = 100;
-
-// for(let i = 1; i <= num; i++){
-
-//     let a 
-//     if(i % 15 == 0){
-//         console.log(i + "MindBuzz");
-//     }else if (i % 3 == 0){
-//         console.log(i + " " + "Relevel");
-//     }else if(i % 5 == 0){
-//         console.log(i + " " + "Buzz");
-//     }
+//     return c;
 // }
 
+// var d = newFucntion(1043.4534);
 
-// let a = 100;
-// var b;
-// for (let i = 1; i <= 100; i++) {
-
-//     b = false;
-    
-//     if (i % 15 === 0) {
-//         b = "MindBuzz"
-//     } else if (i % 5 === 0) {
-//         b = "Buzz"
-//     } else if (i % 3 === 0) {
-//         b = "Relevel"
-//     }
-
-//     if(b != false){
-//         console.log(i + " " + b);
-//     }
-    
-// }
+// console.log(d);
 
 
 
-var num = 16;
 
-for(let i = 0; i < num; i++){
-   if( i * i == num ){
-    console.log("perfect square");
-    break;
-   }
+
+
+var num = 10;
+var a = true;
+for(let i = 2; i <= num; i++){
+    if(num % i === 0){
+        a = false;
+        break;
+    }
+
+}
+console.log(a);
+while(a != true){
+    num++
+    for(let i = 0; i <= num; i++){
+        if(num % i === 0){
+            a = false;
+            break;
+        } else {
+            a = true;
+        }
+    }
+    i = 0;
+    console.log(a)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(num);
