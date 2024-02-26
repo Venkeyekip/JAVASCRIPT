@@ -1,27 +1,29 @@
+
+
 function mergeSortedArrays(arr, l, m, r) {
-    //First sorted array -> l to m
-    //Second sorted array -> m + 1 to r
 
-    let firstArrayLength = (m - l) + 1
-    let secondArrayLength = r - m
+    let leftPartLength = (m - l) + 1;
+    let rightPartLength = r - m;
 
-    let leftPart = new Array(firstArrayLength);
-    let rightPart = new Array(secondArrayLength);
 
-    for (let i = 0; i < firstArrayLength; i++) {
+    let leftPart = new Array(leftPartLength);
+    let rightPart = new Array(rightPartLength);
+
+
+    for(let i = 0; i < leftPartLength; i++) {
         leftPart[i] = arr[l + i];
     }
 
-    for (let j = 0; j < secondArrayLength; j++) {
-        rightPart[j] = arr[m + 1 + j]
+    for(let i = 0; i < rightPartLength; i++) {
+        rightPart[i] = arr[i + m + 1];
     }
 
     let i = 0, j = 0, k = l;
 
-    while (i < firstArrayLength && j < secondArrayLength) {
-        if (leftPart[i] <= rightPart[j]) {
+    while ( i < leftPartLength && j < rightPartLength) {
+        if(leftPart[i] <= rightPart[j]) {
             arr[k] = leftPart[i];
-            i++;
+            i++; 
         } else {
             arr[k] = rightPart[j];
             j++;
@@ -29,32 +31,28 @@ function mergeSortedArrays(arr, l, m, r) {
         k++;
     }
 
-    while (i < firstArrayLength) {
+    while(i < leftPartLength) {
         arr[k] = leftPart[i];
-        i++;
-        k++;
+        i++, k++;
     }
-
-    while (j < secondArrayLength) {
+    while(j < rightPartLength) {
         arr[k] = rightPart[j];
-        j++;
-        k++;
+        j++, k++;
     }
 }
 
-
 function mergeSort(arr, l, r) {
-    if (l >= r) {
+    if(l >= r) {
         return;
     }
 
-    let m = l + parseInt((r - l) / 2)
+    let m = l + parseInt((r - l) / 2);
 
     mergeSort(arr, l, m);
     mergeSort(arr, m + 1, r);
-    mergeSortedArrays(arr, l, m, r)
+    mergeSortedArrays(arr, l, m, r);
 }
+let arr = [3, 2, 5, 2, 0, 923, 293, 2380, 32, 93];
 
-let arr = [5, 3, 2, 99, 0, 4]
-mergeSort(arr, 0, arr.length - 1)
-console.log(arr)
+mergeSort(arr, 0, arr.length - 1); 
+console.log(arr);
